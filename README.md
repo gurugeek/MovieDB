@@ -15,4 +15,4 @@ python manage.py migrate
 python manage.py runserver
 ```
 
-Heroku live preview: [Click](#)
+Heroku live preview: [Click](https://bkozlowski.herokuapp.com/), admin credentials: admin:asdasd123, access admin panel [here](https://bkozlowski.herokuapp.com/admin).
