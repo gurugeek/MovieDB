@@ -1,0 +1,19 @@
+{% extends 'moviedbapp/base.html' %}
+{% block content %}
+<table class="table-sm">
+  <thead>
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">Title</th>
+    </tr>
+  </thead>
+  <tbody>
+    {% for film in films %}
+    <tr>
+      <th>{{ forloop.counter }}</th>
+      <td><a href="{% url 'detail' pk=film.pk %}">{{ film.title }}</a></td>
+    </tr>
+    {% endfor %}
+  </tbody>
+</table>
+{% endblock %}

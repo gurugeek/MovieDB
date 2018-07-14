@@ -1,0 +1,31 @@
+{% extends 'moviedbapp/base.html' %}
+{% block content %}
+<div class="d-flex justify-content-center">
+<div class="card" style="max-width: 20vw;">
+  <img class="card-img-top" src="{{ poster }}" alt="poster">
+  <div class="card-body">
+    <h5 class="card-title">{{ titlee }}, {{ year }}</h5>
+    <p class="card-text">Director: {{ director }}</p>
+    <p class="card-text">Released: {{ released }}</p>
+    <p class="card-text">Genre: {{ genre }}</p>
+    <p class="card-text">{{ plot }}</p>
+    {% for comment in var.comments.all %}
+    <ul class="list-group list-group-flush text-dark">
+      <li class="list-group-item">{{ comment.comment }}</li>
+    </ul>
+    {% empty %}
+    <ul class="list-group list-group-flush text-dark">
+      <li class="list-group-item">No comments added so far.</li>
+    </ul>
+    {% endfor %}
+  </div>
+  <form method="POST" class="post-form">
+    {% csrf_token %}
+    <div>
+  <textarea name="text" type="text" style="width:100%; height:20vh;" required></textarea>
+      <button type="submit" class="save btn btn-secondary" style="width:100%;">Add!</button>
+    </div>
+  </form>
+</div>
+</div>
+{% endblock %}

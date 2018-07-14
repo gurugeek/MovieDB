@@ -1,0 +1,23 @@
+{% extends 'moviedbapp/base.html' %}
+{% block content %}
+<form method="post">
+  {% csrf_token %}
+<div class="input-group mb-3" style="width:25vw; padding-top:35vh; margin:0 auto;">
+  <input name="title" id="input" type="text" class="form-control" placeholder="Movie title" aria-label="Movie title">
+    </form>
+  <div class="input-group-append" id="inputbtn">
+   <button type="submit" class="btn btn-outline-secondary" id="check">Check!</button>
+ </div>
+</div>
+<script>
+$(document).ready(function(){
+    $('#check').attr('disabled',true);
+    $('#input').keyup(function(){
+        if($(this).val().length !=0)
+            $('#check').attr('disabled', false);
+        else
+            $('#check').attr('disabled',true);
+    })
+});
+</script>
+{% endblock %}

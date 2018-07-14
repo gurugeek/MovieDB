@@ -1,0 +1,17 @@
+{% extends 'moviedbapp/baseindex.html' %}
+{% block content %}
+<div class="d-flex justify-content-center" style="margin-top:40vh;">
+<div class="btn-group">
+  <button class="btn btn-primary btn-lg dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+    Movies
+  </button>
+  <div class="dropdown-menu">
+    <a class="dropdown-item" href="{% url 'movies' %}">Checkup</a>
+    <a class="dropdown-item" href="{% url 'movieslist' %}">List</a>
+  </div>
+</div>
+<div class="btn-group">
+  <a href="{% url 'comments' %}"><button class="btn btn-secondary btn-lg" type="button" aria-haspopup="true" aria-expanded="false">Comments</button></a>
+  </div>
+</div>
+{% endblock %}
