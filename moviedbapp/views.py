@@ -15,26 +15,15 @@ def movies(request):
             movietitle=request.POST.get('title')
             '''api call check if any spaces exist, change them to %20'''
             url = "http://omdbapi.com/?t="+movietitle.replace(" ", "%20")+"&apikey=88f5ce43"
-            data = json.loads(urlopen(url).read().decode('utf-8'))
-            '''extracting interesting stuff'''
-            try:
-                titlee=data['Title']
-                year=data['Year']
-                released=data['Released']
-                genre=data['Genre']
-                director=data['Director']
-                plot=data['Plot']
-                poster=data['Poster']
-            except KeyError:
-                return render(request, 'moviedbapp/error.html')
             '''movie found? checking first if title has been saved before if not, saving form'''
             checkup = Movie.objects.filter(title__iexact=movietitle).exists()
             if not checkup:
                 title = form.save(commit=False)
                 title.save()
-                return render(request, 'moviedbapp/moviedetails.html', {'titlee': titlee, 'year':year, 'released': released, 'genre':genre, 'director':director, 'plot': plot, 'poster':poster})
             else:
-                return render(request, 'moviedbapp/moviedetails.html', {'titlee': titlee, 'year':year, 'released': released, 'genre':genre, 'director':director, 'plot': plot, 'poster':poster})
+                pass
+        q=Movie.objects.get(title__iexact=movietitle).id
+        return redirect('detail', pk=q)
     else:
         form = MovieForm()
     return render(request, 'moviedbapp/movies.html')
