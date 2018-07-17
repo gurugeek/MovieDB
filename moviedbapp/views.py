@@ -52,6 +52,7 @@ def comments(request):
     return render(request, 'moviedbapp/comments.html', {'comments':comments})
 
 def detail(request, pk):
+    '''comment adding section'''
     var = get_object_or_404(Movie, pk=pk)
     if request.method == "POST":
         form = CommentForm(request.POST)
@@ -62,19 +63,16 @@ def detail(request, pk):
             return redirect('detail', pk=var.pk)
     else:
         form = CommentForm()
+    '''displaying details'''
     movietitle = var.Title
-    url = "http://omdbapi.com/?t="+movietitle.replace(" ", "%20")+"&apikey=88f5ce43"
-    data = json.loads(urlopen(url).read().decode('utf-8'))
-    try:
-        titlee=data['Title']
-        year=data['Year']
-        released=data['Released']
-        genre=data['Genre']
-        director=data['Director']
-        plot=data['Plot']
-        poster=data['Poster']
-    except KeyError:
-        return render(request, 'moviedbapp/error.html')
+    q = Movie.objects.get(Title__iexact=movietitle)
+    titlee=q.Title
+    year=q.Year
+    released=q.Released
+    genre=q.Genre
+    director=q.Director
+    plot=q.Plot
+    poster=q.Poster
     return render(request, 'moviedbapp/moviedetails.html', {'form':form,'var':var,'titlee': titlee, 'year':year, 'released': released, 'genre':genre, 'director':director, 'plot': plot, 'poster':poster})
 
 '''API starts here'''

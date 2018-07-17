@@ -12,7 +12,7 @@
     {% for comment in comments %}
     <tr>
       <th>{{ forloop.counter }}</th>
-      <td><a href="{% url 'detail' pk=comment.title.pk %}">{{ comment.title.title }}</a></td>
+      <td><a href="{% url 'detail' pk=comment.Title.pk %}">{{ comment.Title.Title }}</a></td>
       <td>{{ comment.comment }}</a></td>
     </tr>
     {% endfor %}

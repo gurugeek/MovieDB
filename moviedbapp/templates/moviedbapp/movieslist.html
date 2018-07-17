@@ -11,7 +11,7 @@
     {% for film in films %}
     <tr>
       <th>{{ forloop.counter }}</th>
-      <td><a href="{% url 'detail' pk=film.pk %}">{{ film.title }}</a></td>
+      <td><a href="{% url 'detail' pk=film.pk %}">{{ film.Title }}</a></td>
     </tr>
     {% endfor %}
   </tbody>
