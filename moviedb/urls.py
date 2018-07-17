@@ -20,4 +20,6 @@ from django.contrib import admin
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
 	url(r'', include('moviedbapp.urls')),
+    url(r'api/', include('moviedbapp.api.urls')),
+    url(r'api', include('moviedbapp.api.urls')),
 ]

@@ -12,5 +12,5 @@ class Movie(models.Model):
         return self.Title
 
 class Comment(models.Model):
-    Title = models.ForeignKey('moviedbapp.Movie', on_delete=models.CASCADE, related_name='comments')
+    Title = models.ForeignKey(Movie, on_delete=models.CASCADE, related_name='comments')
     comment = models.TextField()

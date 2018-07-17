@@ -2,8 +2,6 @@ from django.shortcuts import render, get_object_or_404, redirect
 from .models import Movie, Comment
 from .forms import MovieForm, CommentForm
 from urllib.request import urlopen
-from rest_framework import viewsets
-from .serializers import MovieSerializer, CommentSerializer
 import json
 
 def index(request):
@@ -74,12 +72,3 @@ def detail(request, pk):
     plot=q.Plot
     poster=q.Poster
     return render(request, 'moviedbapp/moviedetails.html', {'form':form,'var':var,'titlee': titlee, 'year':year, 'released': released, 'genre':genre, 'director':director, 'plot': plot, 'poster':poster})
-
-'''API starts here'''
-class MovieView(viewsets.ModelViewSet):
-    queryset = Movie.objects.all()
-    serializer_class = MovieSerializer
-
-class CommentView(viewsets.ModelViewSet):
-    queryset = Comment.objects.all()
-    serializer_class = CommentSerializer
