@@ -30,12 +30,12 @@ Heroku live preview: [Click](https://bkozlowski.herokuapp.com/), admin credentia
 
 Api is available under following links:
 
-+ [api/movie](https://bkozlowski.herokuapp.com/api/movie) for movie GET request
++ [/api/movie](https://bkozlowski.herokuapp.com/api/movie) for movie GET request
 
-+ [api/comment](https://bkozlowski.herokuapp.com/api/comment) for comment GET request
++ [/api/comment](https://bkozlowski.herokuapp.com/api/comment) for comment GET request
 
-+ [api/movie/create](https://bkozlowski.herokuapp.com/api/movie) for POST movie request
++ [/api/movie/create](https://bkozlowski.herokuapp.com/api/movie) for movie POST request
 
-+ [api/comment/create](https://bkozlowski.herokuapp.com/api/comment) for comment GET request
++ [/api/comment/create](https://bkozlowski.herokuapp.com/api/comment) for comment GET request
 
-for filtering in comment section use [api/comment?title=id](https://bkozlowski.herokuapp.com/api/comment?title=1), where id is title ID of movie.
+for filtering in comment section use [/api/comment?title=id](https://bkozlowski.herokuapp.com/api/comment?title=1), where id is title ID of movie.
