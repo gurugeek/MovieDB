@@ -37,3 +37,5 @@ Api is available under following links:
 + [api/movie/create](https://bkozlowski.herokuapp.com/api/movie) for POST movie request
 
 + [api/comment/create](https://bkozlowski.herokuapp.com/api/comment) for comment GET request
+
+for filtering in comment section use [api/comment?title=id](https://bkozlowski.herokuapp.com/api/comment?title=1), where id is title ID of movie.
