@@ -1,5 +1,5 @@
 # MovieDB
-*Built with Django, Django REST framework and Bootstrap*
+*Built with Django (v. 2.0.5), Django REST framework and Bootstrap*
 
 
 
@@ -26,10 +26,13 @@ python manage.py runserver
 
 Heroku live preview: [Click](https://bkozlowski.herokuapp.com/), admin credentials: admin:asdasd123, access admin panel [here](https://bkozlowski.herokuapp.com/admin).
 
-###API module:
+### API module:
 
 Api is available under following links:
 [api/movie](https://bkozlowski.herokuapp.com/api/movie) for movie GET request
+
 [api/comment](https://bkozlowski.herokuapp.com/api/comment) for comment GET request
+
 [api/movie/create](https://bkozlowski.herokuapp.com/api/movie) for POST movie request
+
 [api/comment/create](https://bkozlowski.herokuapp.com/api/comment) for comment GET request
