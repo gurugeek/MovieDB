@@ -29,10 +29,11 @@ Heroku live preview: [Click](https://bkozlowski.herokuapp.com/), admin credentia
 ### API module:
 
 Api is available under following links:
-[api/movie](https://bkozlowski.herokuapp.com/api/movie) for movie GET request
 
-[api/comment](https://bkozlowski.herokuapp.com/api/comment) for comment GET request
++ [api/movie](https://bkozlowski.herokuapp.com/api/movie) for movie GET request
 
-[api/movie/create](https://bkozlowski.herokuapp.com/api/movie) for POST movie request
++ [api/comment](https://bkozlowski.herokuapp.com/api/comment) for comment GET request
 
-[api/comment/create](https://bkozlowski.herokuapp.com/api/comment) for comment GET request
++ [api/movie/create](https://bkozlowski.herokuapp.com/api/movie) for POST movie request
+
++ [api/comment/create](https://bkozlowski.herokuapp.com/api/comment) for comment GET request
